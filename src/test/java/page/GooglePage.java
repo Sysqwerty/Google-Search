@@ -1,11 +1,10 @@
-package test;
+package page;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import page.BasePage;
 
 public class GooglePage extends BasePage {
   @FindBy(xpath = "//input[@name='q']")
@@ -23,7 +22,7 @@ public class GooglePage extends BasePage {
   }
 
   @Override
-  protected boolean isPageLoaded() {
+  public boolean isPageLoaded() {
     return searchField.isDisplayed();
   }
 }

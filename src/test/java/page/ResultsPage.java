@@ -1,4 +1,4 @@
-package test;
+package page;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import page.BasePage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +29,7 @@ public class ResultsPage extends BasePage {
     wait.until(ExpectedConditions.visibilityOf(results));
   }
 
-  protected ResultsPage navigateToSecondPage() {
+  public ResultsPage navigateToSecondPage() {
     pagination2Button.click();
     return this;
   }
@@ -51,7 +50,7 @@ public class ResultsPage extends BasePage {
   }
 
   @Override
-  protected boolean isPageLoaded() {
+  public boolean isPageLoaded() {
     return results.isDisplayed();
   }
 }
