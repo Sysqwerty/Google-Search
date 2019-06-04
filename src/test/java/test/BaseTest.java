@@ -20,22 +20,28 @@ public class BaseTest {
   void beforeMethod() {
     WebDriverManager.chromedriver().setup();
 
+    //set default browser locale
     ChromeOptions options = new ChromeOptions();
     DesiredCapabilities jsCapabilities = DesiredCapabilities.chrome();
     Map<String, Object> prefs = new HashMap<String, Object>();
     prefs.put("intl.accept_languages", "en");
     options.setExperimentalOption("prefs", prefs);
     jsCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
+
+    // initialize WebDriver
     driver = new ChromeDriver(options);
 
+    // setup config
     driver.get("https://www.google.com");
     driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);   // set WebDriver implicitly wait()
+
+    // open start page
     googlePage = new GooglePage(driver);
   }
 
   @AfterMethod
   void afterMethod() {
-//    driver.quit();
+    driver.quit();
   }
 }

@@ -11,22 +11,19 @@ public class GooglePage extends BasePage {
   @FindBy(xpath = "//input[@name='q']")
   private WebElement searchField;
 
-  @FindBy(xpath = "???")
-  private WebElement searchButton;
-
   public GooglePage(WebDriver driver) {
     this.driver = driver;
     PageFactory.initElements(driver, this);
-  }
-
-  @Override
-  protected boolean isPageLoaded() {
-    return searchField.isDisplayed();
   }
 
   public ResultsPage search(String searchTerm) {
     searchField.sendKeys(searchTerm);
     searchField.sendKeys(Keys.ENTER);
     return new ResultsPage(driver);
+  }
+
+  @Override
+  protected boolean isPageLoaded() {
+    return searchField.isDisplayed();
   }
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="LinkedIn Login Tests">
+
+    <test name="Positive">
+        <classes>
+            <class name="test.GoogleSearchTest">
+                <methods>
+                    <include name="searchForText"/>
+                    <!--<exclude name="someTest" />-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--<test name="Negative">-->
+    <!--<classes>-->
+    <!--<class name="test.GoogleSearchTest">-->
+    <!--<methods>-->
+    <!--<include name="searchForText"/>-->
+    <!--&lt;!&ndash;<exclude name="someTest" />&ndash;&gt;-->
+    <!--</methods>-->
+    <!--</class>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+</suite>
